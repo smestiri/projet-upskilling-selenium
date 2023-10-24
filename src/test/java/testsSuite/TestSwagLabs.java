@@ -1,4 +1,4 @@
-package features;
+package testsSuite;
 
 import org.apache.logging.log4j.core.config.plugins.PluginLoggerContext;
 import org.example.pageobject.LoginUserPage;

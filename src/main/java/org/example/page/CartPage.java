@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-/*public class CartPage {
+public class CartPage {
     WebDriver driver;
     public CartPage (WebDriver driver){
         this.driver= driver;}
@@ -16,4 +16,4 @@ import org.openqa.selenium.WebElement;
         cartButton.click();
         return;
     }
-}*/
+}

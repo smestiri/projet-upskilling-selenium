@@ -17,10 +17,13 @@ public class HomePages {
     public void goToHomePage(String url) {
         driver.get(url);
     }
+    public void scrollPageDown() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
     public void navigateToElementsPage() {
         driver.findElement(By.xpath("//h5[text()='Elements']")).click();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 2000);");
 
     }
     public void navigateToTablesPage() {

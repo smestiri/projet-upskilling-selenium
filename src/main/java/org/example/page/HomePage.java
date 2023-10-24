@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/*@Log4j2
+@Log4j2
 public class HomePage {
         WebDriver driver;
 
@@ -34,4 +34,4 @@ public class HomePage {
         waitAndClick(cartButton);
         return new CartPage(driver);
     }
-}*/
+}

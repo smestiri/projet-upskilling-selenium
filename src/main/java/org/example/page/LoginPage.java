@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-/*public class LoginPage {
+public class LoginPage {
     WebDriver driver;
 
     public LoginPage(WebDriver driver){
@@ -32,6 +32,4 @@ import org.openqa.selenium.WebElement;
         return new HomePage(driver);
     }
 
-
-
-}*/
+}

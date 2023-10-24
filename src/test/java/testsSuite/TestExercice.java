@@ -1,4 +1,4 @@
-package features;
+package testsSuite;
 
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +21,7 @@ public class TestExercice {
 
     }
 
-    @Test
+   /* @Test
     public void testSwag(){
         //Arrange
         String user = "standard_user";
@@ -56,6 +56,6 @@ public class TestExercice {
     public void teardown(){
         driver.quit();
         System.out.println("Teardown successful !");
-    }
+    }*/
 
 }

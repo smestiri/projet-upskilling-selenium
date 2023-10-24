@@ -1,4 +1,4 @@
-package features;
+package testsSuite;
 
 import lombok.extern.log4j.Log4j2;
 import org.example.pagedemoqa.ElementsPage;
@@ -33,9 +33,7 @@ public class TestDemoqa {
         driver.manage().window().maximize();
         log.info("opened successfully");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Attente implicite de 10 secondes
-        HomePages homePages = new HomePages(driver);
-        ElementsPage elementsPage = new ElementsPage(driver);
-        TablesPage webTablesPage = new TablesPage(driver);
+
     }
     @Test
     public void testDemoQa (){
@@ -44,6 +42,7 @@ public class TestDemoqa {
         TablesPage webTablesPage = new TablesPage(driver);
 
         homePages.goToHomePage("https://demoqa.com/");
+        homePages.scrollPageDown();
         homePages.navigateToElementsPage();
         Assert.assertTrue(elementsPage.isOnElementsPage(), "Not on the Elements page.");
         elementsPage.performSomeAction();
