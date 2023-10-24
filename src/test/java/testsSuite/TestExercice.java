@@ -20,7 +20,6 @@ public class TestExercice {
         System.out.println(URL + " -> opened successfully");
 
     }
-
    /* @Test
     public void testSwag(){
         //Arrange
