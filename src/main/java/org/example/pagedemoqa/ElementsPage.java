@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 @Log4j2
 public class ElementsPage {
@@ -22,7 +21,7 @@ public class ElementsPage {
             System.out.println("Échec : Vous n'êtes pas sur la page Element.");
         }
     }
-   public TablesPage goToWebTables() {
+   public void goToWebTables() {
        // Trouvez l'élément obscurant et l'élément cible.
        WebElement obscurantElement = driver.findElement(By.id("adplus-anchor"));
        WebElement targetElement = driver.findElement(By.id("item-3"));
@@ -33,10 +32,10 @@ public class ElementsPage {
        try {
            Thread.sleep(1000);
        } catch (InterruptedException e) {
-           e.printStackTrace();
+           //e.printStackTrace();
        }
        targetElement.click();
 
-       return new TablesPage(driver);
+       new TablesPage(driver);
    }
 }

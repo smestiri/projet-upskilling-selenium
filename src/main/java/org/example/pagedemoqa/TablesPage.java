@@ -11,7 +11,8 @@ public class TablesPage {
     static WebDriver driver;
 
     public TablesPage(WebDriver driver) {
-        this.driver = driver;
+
+        TablesPage.driver = driver;
     }
 
     public void salaryHeader() {
@@ -33,7 +34,7 @@ public class TablesPage {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
             lastDeleteButton.click();
         }
