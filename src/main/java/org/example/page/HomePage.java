@@ -16,11 +16,9 @@ public class HomePage {
     @FindBy(id="add-to-cart-sauce-labs-backpack")
     WebElement bouttonAddtoCart;
 
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver,this);
-
     }
 
     // By AddToCartID= By.id("add-to-cart-sauce-labs-backpack");

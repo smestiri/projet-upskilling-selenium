@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriverService;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -25,16 +27,20 @@ public class TestDemoqa {
     private HomePages homePage;
     private ElementsPage elementsPage;
     private TablesPage webtablesPage;
+    private FirefoxOptions options;
 
 
     @BeforeMethod
     public void setup (){
-        driver = new FirefoxDriver();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--disable-notifications");
+        driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         log.info("opened successfully");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Attente implicite de 10 secondes
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Attente implicite de 10 secondes
 
     }
+
     @Test
     public void testDemoQa (){
         HomePages homePages = new HomePages(driver);
@@ -42,15 +48,12 @@ public class TestDemoqa {
         TablesPage webTablesPage = new TablesPage(driver);
 
         homePages.goToHomePage("https://demoqa.com/");
-        homePages.scrollPageDown();
-        homePages.navigateToElementsPage();
-        Assert.assertTrue(elementsPage.isOnElementsPage(), "Not on the Elements page.");
-        elementsPage.performSomeAction();
-        homePages.navigateToTablesPage();
-        webTablesPage.sortBySalaryDescending();
+        homePages.goToElementsPage();
+        elementsPage.isOnElementsPage();
+        elementsPage.goToWebTables();
+        webTablesPage.salaryHeader();
         webTablesPage.deleteLastRow();
-
-
+        webTablesPage.isLastRowDeleted();
 
             driver.quit();
             log.info("Le navigateur a été fermé.");

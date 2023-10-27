@@ -10,24 +10,24 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class HomePages {
-    static WebDriver driver;
+   WebDriver driver;
     public HomePages(WebDriver driver){
         this.driver= driver;
     }
     public void goToHomePage(String url) {
         driver.get(url);
     }
-    public void scrollPageDown() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    public ElementsPage goToElementsPage() {
+        WebElement elementToClick = driver.findElement(By.xpath("//h5[text()='Elements']"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", elementToClick);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace(); //Afficher la trace de la pile de l'exception
+        }
+        elementToClick.click();
+        return new ElementsPage(driver);
     }
 
-    public void navigateToElementsPage() {
-        driver.findElement(By.xpath("//h5[text()='Elements']")).click();
-
-    }
-    public void navigateToTablesPage() {
-        driver.findElement(By.id("item-3")).click();
-    }
 
 }
